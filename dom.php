@@ -23,12 +23,12 @@
 
     </div>
 
-    <script>
-        let input = location.hash.substring(1);
+<script>
+    let input = location.hash.substring(1);
 
-        // vulnerable
-        document.getElementById("output").innerHTML = decodeURIComponent(input);
-    </script>
+    // SAFE: no HTML parsing
+    document.getElementById("output").textContent = decodeURIComponent(input);
+</script>
 
 </body>
 
