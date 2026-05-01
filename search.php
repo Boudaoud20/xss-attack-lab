@@ -1,6 +1,8 @@
 <?php
 $q = $_GET['q'] ?? '';
+$safe_q = htmlspecialchars($q, ENT_QUOTES, 'UTF-8');
 ?>
+
 <link rel="stylesheet" href="style.css">
 
 <div class="navbar">
@@ -17,13 +19,7 @@ $q = $_GET['q'] ?? '';
     <button>Search</button>
 </form>
 
-<?php
-$q = $_GET['q'] ?? '';
-$safe_q = htmlspecialchars($q, ENT_QUOTES, 'UTF-8');
-?>
-
 <p>Results for: <?php echo $safe_q; ?></p>
 
 </div>
-
 </div>
